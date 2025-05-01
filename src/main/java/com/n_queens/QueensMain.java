@@ -1,7 +1,7 @@
-package main.java.com.n_queens;
+package com.n_queens;
 
-import main.java.com.n_queens.game_logic.Queens;
-import main.java.com.n_queens.game_logic.State;
+import com.n_queens.game_logic.Queens;
+import com.n_queens.game_logic.State;
 
 import java.util.Scanner;
 
@@ -22,7 +22,7 @@ public class QueensMain {
             System.out.print("Put on chosen cell (P) | Remove (R) | Clear (C) | Quit (Q): ");
             char cmd = Character.toUpperCase(scanner.next().charAt(0));
             if (cmd == 'P') {
-                System.out.print("The queen is put on the cell: ");
+                System.out.print("The queen is put on the Row: ");
                 int row = scanner.nextInt();
                 System.out.print("                Column: ");
                 char col = Character.toUpperCase(scanner.next().charAt(0));
@@ -66,7 +66,7 @@ public class QueensMain {
         System.out.println("|");
 
         for (int row = 1; row <= game.getSize(); row++) {
-            System.out.print(String.format(" %d |", row));
+            System.out.printf(" %d |", row);
             for (int col = 0; col < game.getSize(); col++) {
                 System.out.print(game.hasQueen(row, col) ? " Q " : " . ");
             }
